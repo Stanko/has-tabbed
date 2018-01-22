@@ -8,7 +8,7 @@ and removes it if user clicks anywhere.
 
 This enables you to have focus outline only when user is using keyboard.
 
-[Demo](https://stanko.github.io/has-tabbed/)
+[Demo](https://stanko.github.io/has-tabbed/) | [Blog post](https://stanko.github.io/has-tabbed-aka-should-i-release-small-libraries/)
 
 ## Usage
 
