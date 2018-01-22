@@ -12,6 +12,14 @@ This enables you to have focus outline only when user is using keyboard.
 
 ## Usage
 
+Get it from npm
+
+```
+npm install --save has-tabbed
+```
+
+and use it
+
 ```js
 import HasTabbed from 'has-tabbed';
 
@@ -64,8 +72,9 @@ const tabbed = new HasTabbed('my-super-duper-class');
 You should use ES modules, but you can use it directly in the browser.
 
 ```html
+<!-- copy "has-tabbed.js" to your project -->
 <script src="has-tabbed.js"></script>
 <script>
-  var ht = new HasTabbed();
+  var tabbed = new HasTabbed();
 </script>
 ```
