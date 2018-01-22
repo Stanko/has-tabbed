@@ -102,12 +102,17 @@
       height: 6rem;
       margin: 0.5rem;
       float: left;
-      transition: opacity 250ms;
+      transition: opacity 250ms, transform 250ms;
       cursor: pointer;
     }
 
     .Button:hover {
-      opacity: 0.8;
+      opacity: 0.9;
+      transform: scale(1.1);
+    }
+
+    .Button:active {
+      transform: translateY(1px);
     }
 
     .Button--1 { background-color: #34ba9c; }
