@@ -7,6 +7,11 @@
   function HasTabbed(className) {
     this.className = className || DEFAULT_CLASSNAME;
 
+    if (typeof document === 'undefined') {
+      // Server side rendering
+      return;
+    }
+
     // Cache html class list
     this.htmlClassList = document.querySelector('html').classList;
 
