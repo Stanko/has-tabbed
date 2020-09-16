@@ -67,6 +67,18 @@ import HasTabbed from 'has-tabbed';
 const tabbed = new HasTabbed('my-super-duper-class');
 ```
 
+### config
+To treat any keyboard event as tab (e.g. custom focus handling) pass a config object as a parameter:
+
+```js
+const config = {
+  className: 'my-super-duper-class',
+  treatAnyKeyboardEventAsTab: true
+};
+
+const tabbed = new HasTabbed(config);
+```
+
 ## Old school usage
 
 You should use ES modules, but you can use it directly in the browser.

@@ -1,11 +1,19 @@
 'use strict';
 
 (function() {
-  var TAB_KEY_CODE = 9;
-  var DEFAULT_CLASSNAME = '--tabbed';
+  var DEFAULTS = {
+    treatAnyKeyboardEventAsTab: false,
+    className: '--tabbed'
+  };
 
-  function HasTabbed(className) {
-    this.className = className || DEFAULT_CLASSNAME;
+  function HasTabbed(config) {
+    if (typeof config === 'string') {
+      this.className = config;
+    } else if (typeof config === 'object') {
+      Object.assign(this, DEFAULTS, config);
+    } else {
+      Object.assign(this, DEFAULTS);
+    }
 
     if (typeof document === 'undefined') {
       // Server side rendering
@@ -28,7 +36,7 @@
   };
 
   HasTabbed.prototype.handleKeyDown = function(e) {
-    if (e.keyCode === TAB_KEY_CODE) {
+    if (e.key === 'Tab' || this.treatAnyKeyboardEventAsTab) {
       this.htmlClassList.add(this.className);
     }
   };
