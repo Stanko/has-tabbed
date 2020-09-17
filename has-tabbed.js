@@ -2,7 +2,7 @@
 
 (function() {
   var TAB_KEY_CODE = 9;
-  var DEFAULT_CLASSNAME = 'has-tabbed';
+  var DEFAULT_CLASS_NAME = 'has-tabbed';
 
   function HasTabbed(userOptions) {
     if (typeof document === 'undefined') {
@@ -12,7 +12,7 @@
 
     var options = userOptions || {};
 
-    this.className = options.className || DEFAULT_CLASSNAME;
+    this.className = options.className || DEFAULT_CLASS_NAME;
     this.triggerOnAllKeys = options.triggerOnAllKeys || false;
 
     // Cache html class list pointer
