@@ -126,15 +126,12 @@
     .Button--9 { background-color: #e34e47; }
 
     * {
-      outline: 1px dotted rgba(50, 50, 50, 0);
-      outline-offset: 0.8rem;
-      will-change: outline-color, outline-offset;
+      outline: 3px solid transparent;
+      outline-offset: 0.3rem;
     }
 
-    .--tabbed *:focus {
-      outline: 1px dotted rgba(50, 50, 50, 1);
-      outline-offset: 0.5rem;
-      transition: outline-offset 250ms;
+    .has-tabbed *:focus {
+      outline: 3px solid #409ad7;
     }
   </style>
 </head>
@@ -147,7 +144,7 @@
     </p>
     <p>
       This enables you to have focus outline only when user is using keyboard.
-      Start tabbing to see it in action.
+      Start using keyboard to navigate to see it in action.
     </p>
     <p>
       Find documentation on <a class="Link" href="https://github.com/Stanko/has-tabbed">GitHub</a>.
