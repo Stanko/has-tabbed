@@ -1,6 +1,6 @@
 {
   "name": "has-tabbed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small library that adds CSS class to html when user starts tabbing, and removes it if user clicks anywhere.",
   "main": "has-tabbed.js",
   "scripts": {

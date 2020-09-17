@@ -25,15 +25,15 @@ import HasTabbed from 'has-tabbed';
 const tabbed = new HasTabbed();
 ```
 
-That's it. By default library is activated when instance is created.
-You can control it manually by using `activate` and `deactivate` methods.
+That's it. By default library is active when instance is created.
+You can control it manually by using `addEvents` and `removeEvents` methods.
 
 ```js
 // Removes all listeners and CSS class
-tabbed.deactivate();
+tabbed.removeEvents();
 
 // Adds listeners again
-tabbed.activate();
+tabbed.addEvents();
 ```
 
 Then you can use `has-tabbed` class in your CSS
