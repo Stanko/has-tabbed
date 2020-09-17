@@ -31,7 +31,9 @@
   };
 
   HasTabbed.prototype.handleKeyDown = function(e) {
-    if (this.triggerOnAllKeys || e.keyCode === TAB_KEY_CODE) {
+    var isTab = e.key === 'Tab' || e.keyCode === TAB_KEY_CODE;
+
+    if (this.triggerOnAllKeys || isTab) {
       this.htmlClassList.add(this.className);
     }
   };
