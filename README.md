@@ -3,8 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/has-tabbed.svg?style=flat-square)](https://www.npmjs.com/package/has-tabbed)
 [![npm downloads](https://img.shields.io/npm/dm/has-tabbed.svg?style=flat-square)](https://www.npmjs.com/package/has-tabbed)
 
-Small library that adds CSS class to html when user starts tabbing,
-and removes it if user clicks anywhere.
+Small library that adds CSS class to html when user starts using keyboard to navigate, and removes it if user clicks anywhere.
 
 This enables you to have focus outline only when user is using keyboard.
 
@@ -37,35 +36,46 @@ tabbed.deactivate();
 tabbed.activate();
 ```
 
-Then you can use `--tabbed` class in your CSS
+Then you can use `has-tabbed` class in your CSS
 
 ```css
 /* This is naive example used in the demo */
 * {
-  outline: 1px dotted rgba(50, 50, 50, 0);
-  outline-offset: 0.8rem;
-  will-change: outline-color, outline-offset;
+  outline: 3px solid transparent;
+  outline-offset: 0.3rem;
 }
 
-.--tabbed *:focus {
-  outline: 1px dotted rgba(50, 50, 50, 1);
-  outline-offset: 0.5rem;
-  transition: outline-offset 250ms;
+.has-tabbed *:focus {
+  outline: 3px solid #409ad7;
 }
 ```
 
 ## Options
 
-### className
+Library accepts a single options object with the following properties:
 
-By default library will add `--tabbed` class to `html` element.
-To change it just pass custom class name when creating an instance.
+* **className** (default `has-tabbed`)
+
+  CSS class name which will be added to the `html` element. 
+
+* **triggerOnAllKeys** (default `false`)
+
+  If you want to add CSS class on all keyboard events not only when user presses tab, change this one to `true`
+
 
 ```js
 import HasTabbed from 'has-tabbed';
 
-const tabbed = new HasTabbed('my-super-duper-class');
+const tabbed = new HasTabbed({
+  className: 'navigating-using-keyboard',
+  triggerOnAllKeys: true,
+});
 ```
+
+## v1.0.0 breaking changes
+
+* `className` property is now replaced with an [options object](#options).
+* Default class name is changed from `--tabbed` to `has-tabbed`.
 
 ## Old school usage
 

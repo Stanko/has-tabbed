@@ -2,17 +2,20 @@
 
 (function() {
   var TAB_KEY_CODE = 9;
-  var DEFAULT_CLASSNAME = '--tabbed';
+  var DEFAULT_CLASSNAME = 'has-tabbed';
 
-  function HasTabbed(className) {
-    this.className = className || DEFAULT_CLASSNAME;
-
+  function HasTabbed(userOptions) {
     if (typeof document === 'undefined') {
       // Server side rendering
       return;
     }
 
-    // Cache html class list
+    var options = userOptions || {};
+
+    this.className = options.className || DEFAULT_CLASSNAME;
+    this.triggerOnAllKeys = options.triggerOnAllKeys || false;
+
+    // Cache html class list pointer
     this.htmlClassList = document.querySelector('html').classList;
 
     this.addEvents();
@@ -28,7 +31,7 @@
   };
 
   HasTabbed.prototype.handleKeyDown = function(e) {
-    if (e.keyCode === TAB_KEY_CODE) {
+    if (this.triggerOnAllKeys || e.keyCode === TAB_KEY_CODE) {
       this.htmlClassList.add(this.className);
     }
   };
