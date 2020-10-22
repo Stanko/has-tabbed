@@ -1,8 +1,9 @@
 {
   "name": "has-tabbed",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Small library that adds CSS class to html when user starts tabbing, and removes it if user clicks anywhere.",
   "main": "has-tabbed.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint has-tabbed.js || true"
