@@ -1,6 +1,6 @@
 {
   "name": "has-tabbed",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Small library that adds CSS class to html when user starts tabbing, and removes it if user clicks anywhere.",
   "main": "has-tabbed.js",
   "types": "index.d.ts",
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Stanko/has-tabbed#readme",
   "devDependencies": {
-    "eslint": "^7.9.0",
+    "eslint": "^8.38.0",
     "eslint-config-es5": "^0.5.0"
   }
 }
