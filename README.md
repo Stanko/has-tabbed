@@ -3,6 +3,12 @@
 [![npm version](https://img.shields.io/npm/v/has-tabbed.svg?style=flat-square)](https://www.npmjs.com/package/has-tabbed)
 [![npm downloads](https://img.shields.io/npm/dm/has-tabbed.svg?style=flat-square)](https://www.npmjs.com/package/has-tabbed)
 
+## :focus-visible
+
+Today, [:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible) is widely supported, so you probably want to use that instead of this library. However, I'll keep it around for posterity and poor souls that still have to support old browsers.
+
+## What is this?
+
 Small library that adds CSS class to html when user starts using keyboard to navigate, and removes it if user clicks anywhere.
 
 This enables you to have focus outline only when user is using keyboard.
