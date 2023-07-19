@@ -1,6 +1,6 @@
 'use strict';
 
-(function() {
+(function () {
   var TAB_KEY_CODE = 9;
   var DEFAULT_CLASS_NAME = 'has-tabbed';
 
@@ -21,7 +21,7 @@
     this.addEvents();
   }
 
-  HasTabbed.prototype.addEvents = function() {
+  HasTabbed.prototype.addEvents = function () {
     // Bind handlers
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -30,7 +30,7 @@
     window.addEventListener('mousedown', this.handleClick);
   };
 
-  HasTabbed.prototype.handleKeyDown = function(e) {
+  HasTabbed.prototype.handleKeyDown = function (e) {
     var isTab = e.key === 'Tab' || e.keyCode === TAB_KEY_CODE;
 
     if (this.triggerOnAllKeys || isTab) {
@@ -38,11 +38,11 @@
     }
   };
 
-  HasTabbed.prototype.handleClick = function() {
+  HasTabbed.prototype.handleClick = function () {
     this.htmlClassList.remove(this.className);
   };
 
-  HasTabbed.prototype.removeEvents = function() {
+  HasTabbed.prototype.removeEvents = function () {
     this.htmlClassList.remove(this.className);
     this.htmlClassList = null;
 
@@ -50,13 +50,18 @@
     window.removeEventListener('mousedown', this.handleClick);
   };
 
-
   if (typeof module !== 'undefined' && module.exports) {
     HasTabbed.default = HasTabbed;
     module.exports = HasTabbed;
-  } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) { // eslint-disable-line no-undef
+  } else if (
+    typeof define === 'function' &&
+    typeof define.amd === 'object' &&
+    define.amd
+  ) {
+    // eslint-disable-line no-undef
     // register as 'has-tabbed', consistent with npm package name
-    define('has-tabbed', [], function() { // eslint-disable-line no-undef
+    define('has-tabbed', [], function () {
+      // eslint-disable-line no-undef
       return HasTabbed;
     });
   } else if (typeof window !== 'undefined') {
